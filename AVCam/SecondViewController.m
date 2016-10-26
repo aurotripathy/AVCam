@@ -7,10 +7,14 @@
 //
 
 #import "SecondViewController.h"
+#import "common.h"
 
 @interface SecondViewController ()
 
 @end
+//GLOBALS
+NSMutableURLRequest *postRequest;
+NSString *recipientPhoneNumber;
 
 @implementation SecondViewController
 
@@ -53,15 +57,54 @@
 
 
 // This method is called once we complete editing
+// It also fires off the ReST API
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     NSLog(@"Text field ended editing");
     NSLog(@"the text is %@", textField.text);
+    recipientPhoneNumber = textField.text;
+    [self setPostPhoneParams:recipientPhoneNumber];
+    NSLog(@"Invoking the ReST API %@", RECEIVER_PHONE_URL);
+    
+    NSError *http_error = nil;
+    NSURLResponse *responseStr = nil;
+    NSData *syncResData;
+    syncResData = [NSURLConnection sendSynchronousRequest:postRequest returningResponse:&responseStr error:&http_error];
+    NSString *returnString = [[NSString alloc] initWithData:syncResData encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"ERROR %@", http_error);
+    NSLog(@"RES %@", responseStr);
+    
+    NSLog(@"RETURN STRING:%@", returnString);
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"touchesBegan:withEvent:");
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
+}
+
+-(BOOL) setPostPhoneParams:(NSString *)phone{
+    
+    if(recipientPhoneNumber != nil) {
+        postRequest = [NSMutableURLRequest new];
+        postRequest.timeoutInterval = 20.0;
+        [postRequest setURL:[NSURL URLWithString:UPLOAD_URL]];
+        [postRequest setHTTPMethod:@"POST"];
+        
+        NSDictionary* jsonDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        recipientPhoneNumber, @"phone",
+                                        nil];
+        NSError *error;
+        NSData* jsonData = [NSJSONSerialization dataWithJSONObject:jsonDictionary
+                            options:NSJSONWritingPrettyPrinted error:&error];
+        [postRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [postRequest setHTTPBody:jsonData];
+        
+        return TRUE;
+        
+    }else{
+        return FALSE;
+    }
 }
 
 

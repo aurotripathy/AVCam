@@ -7,6 +7,7 @@
 */
 
 #import "AVCamPhotoCaptureDelegate.h"
+#import "common.h"
 
 @import Photos;
 
@@ -108,12 +109,12 @@ NSMutableURLRequest *request;
 -(BOOL) setPostParams:(NSData *)imageData{
     
     
-#define URL            @"https://88462519.ngrok.io/curl/"  // change this URL when the server moves
+
     
     if(self.photoData != nil) {
         request = [NSMutableURLRequest new];
         request.timeoutInterval = 20.0;
-        [request setURL:[NSURL URLWithString:URL]];
+        [request setURL:[NSURL URLWithString:UPLOAD_URL]];
         [request setHTTPMethod:@"POST"];
         
         NSString *boundary = @"---------------------------14737809831466499882746641449";
