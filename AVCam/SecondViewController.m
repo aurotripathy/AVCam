@@ -23,13 +23,13 @@ NSString *recipientPhoneNumber;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    CGRect phoneTextFieldFrame = CGRectMake(20.0f, 100.0f, 280.0f, 31.0f);
+    CGRect phoneTextFieldFrame = CGRectMake(60.0f, 100.0f, 205.0f, 31.0f);
     UITextField *phoneTextField = [[UITextField alloc] initWithFrame:phoneTextFieldFrame];
     phoneTextField.placeholder = @"14088025434";
     phoneTextField.keyboardType = UIKeyboardTypePhonePad;
     phoneTextField.backgroundColor = [UIColor whiteColor];
     phoneTextField.textColor = [UIColor blackColor];
-    phoneTextField.font = [UIFont systemFontOfSize:17.0f];
+    phoneTextField.font = [UIFont systemFontOfSize:25.0f];
     phoneTextField.borderStyle = UITextBorderStyleRoundedRect;
     phoneTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     phoneTextField.returnKeyType = UIReturnKeyDone;
@@ -88,7 +88,7 @@ NSString *recipientPhoneNumber;
     if(recipientPhoneNumber != nil) {
         postRequest = [NSMutableURLRequest new];
         postRequest.timeoutInterval = 20.0;
-        [postRequest setURL:[NSURL URLWithString:UPLOAD_URL]];
+        [postRequest setURL:[NSURL URLWithString:RECEIVER_PHONE_URL]];
         [postRequest setHTTPMethod:@"POST"];
         
         NSDictionary* jsonDictionary = [NSDictionary dictionaryWithObjectsAndKeys:

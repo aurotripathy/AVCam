@@ -9,7 +9,7 @@
 #ifndef common_h
 #define common_h
 
-#define URL                   @"https://88462519.ngrok.io/"
+#define URL                   @"https://68a6fd80.ngrok.io/"
 #define UPLOAD_URL            (URL @"curl/")
 #define RECEIVER_PHONE_URL     (URL @"phone/")
 

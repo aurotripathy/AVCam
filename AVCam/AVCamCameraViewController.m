@@ -430,7 +430,8 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 			{
 				[self.session beginConfiguration];
 				[self.session addOutput:movieFileOutput];
-				self.session.sessionPreset = AVCaptureSessionPresetHigh;
+                //auro changes capture to low profile
+				self.session.sessionPreset = AVCaptureSessionPresetLow;
 				AVCaptureConnection *connection = [movieFileOutput connectionWithMediaType:AVMediaTypeVideo];
 				if ( connection.isVideoStabilizationSupported ) {
 					connection.preferredVideoStabilizationMode = AVCaptureVideoStabilizationModeAuto;
@@ -752,6 +753,9 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 		Note: Since we use a unique file path for each recording, a new recording will
 		not overwrite a recording currently being saved.
 	*/
+    
+    // Auro potentially upload video from this function
+    
 	UIBackgroundTaskIdentifier currentBackgroundRecordingID = self.backgroundRecordingID;
 	self.backgroundRecordingID = UIBackgroundTaskInvalid;
 	
