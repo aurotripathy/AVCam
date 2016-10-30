@@ -175,7 +175,7 @@ NSMutableURLRequest *request;
     int widthInPixels = widthInPoints * image.scale;
     NSLog(@"width height %d %d", widthInPixels, heightInPixels);
     
-    //scale it down
+    //auro scale it down
     image = [self imageWithImage:image : 400];
 
     heightInPoints = image.size.height;
