@@ -15,6 +15,7 @@
 		7A74447A1CEE6B0F00C70C83 /* AVCamPhotoCaptureDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7444791CEE6B0F00C70C83 /* AVCamPhotoCaptureDelegate.m */; };
 		7A74447C1CEE6B4B00C70C83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A74447B1CEE6B4B00C70C83 /* Assets.xcassets */; };
 		7A74447E1CEE6B5900C70C83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A74447D1CEE6B5900C70C83 /* Main.storyboard */; };
+		AE1ED3631DC702A5008C1508 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1ED3621DC702A5008C1508 /* ThirdViewController.m */; };
 		AE2B58301DBFDC3200B727AF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2B582F1DBFDC3200B727AF /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,8 @@
 		7A7444791CEE6B0F00C70C83 /* AVCamPhotoCaptureDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPhotoCaptureDelegate.m; sourceTree = "<group>"; };
 		7A74447B1CEE6B4B00C70C83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A74447D1CEE6B5900C70C83 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AE1ED3611DC702A5008C1508 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		AE1ED3621DC702A5008C1508 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		AE2B582E1DBFDC3200B727AF /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		AE2B582F1DBFDC3200B727AF /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		AE2B58311DC01B3D00B727AF /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				2206265E1A1E330400A45150 /* main.m */,
 				AE2B582E1DBFDC3200B727AF /* SecondViewController.h */,
 				AE2B582F1DBFDC3200B727AF /* SecondViewController.m */,
+				AE1ED3611DC702A5008C1508 /* ThirdViewController.h */,
+				AE1ED3621DC702A5008C1508 /* ThirdViewController.m */,
 				AE2B58311DC01B3D00B727AF /* common.h */,
 			);
 			path = AVCam;
@@ -168,6 +173,7 @@
 				220626891A1E345E00A45150 /* AVCamPreviewView.m in Sources */,
 				2206268A1A1E345E00A45150 /* AVCamCameraViewController.m in Sources */,
 				7A74447A1CEE6B0F00C70C83 /* AVCamPhotoCaptureDelegate.m in Sources */,
+				AE1ED3631DC702A5008C1508 /* ThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
