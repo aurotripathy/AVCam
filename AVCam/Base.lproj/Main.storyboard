@@ -206,9 +206,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoW-gi-mx2">
-                                <frame key="frameInset" minX="166" minY="20" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoW-gi-mx2">
+                                <frame key="frameInset" minX="157" minY="20" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -216,6 +215,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="xoW-gi-mx2" firstAttribute="centerX" secondItem="5b2-DF-R5n" secondAttribute="centerX" id="cIT-Cg-m1f"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="EW7-tY-Ryx" appends="YES" id="xSu-Lg-hbw"/>
                             <outletCollection property="gestureRecognizers" destination="GCR-G2-puq" appends="YES" id="0uQ-mr-OCd"/>
@@ -234,7 +236,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="47.200000000000003" y="-628.33583208395805"/>
+            <point key="canvasLocation" x="188" y="-618"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="rTO-IF-LtQ">
@@ -248,9 +250,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upload Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F36-tp-DTm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Upload Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F36-tp-DTm">
                                 <frame key="frameInset" minX="132" minY="20" width="109" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -258,6 +260,9 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="F36-tp-DTm" firstAttribute="centerX" secondItem="UmL-yS-HWI" secondAttribute="centerX" id="44e-BD-CnV"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="3SE-vF-YvM" appends="YES" id="sCv-ia-EAo"/>
                         </connections>
@@ -270,7 +275,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="734" y="-626"/>
+            <point key="canvasLocation" x="1030" y="-628"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

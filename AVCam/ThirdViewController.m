@@ -19,7 +19,13 @@
 
 // taken from http://supereasyapps.com/blog/2014/8/4/create-a-uibutton-in-code-with-objective-c
 
-- (void)video {
+
+- (void)sendVideo {
+    
+    NSLog(@"Here's where we send video");
+}
+
+- (void)pickVideo {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -49,8 +55,12 @@
         NSLog(@"Thumb size %f, %f", thumb.size.height, thumb.size.width);
         UIImageView * myImageView = [[UIImageView alloc] initWithImage: thumb];
         
-        UIImageView *thumbImgView = [[UIImageView alloc] initWithFrame:CGRectMake(25,200,125,125)]; //just example change the frame as per your need
+        UIImageView *thumbImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,125,125)];
+        //UIImageView *thumbImgView = [[UIImageView alloc] init];
         thumbImgView.image = thumb;
+        thumbImgView.center = self.view.center;
+        //thumbImgView.contentMode = UIViewContentModeCenter;
+        
         [self.view addSubview:thumbImgView];
         
     } failureBlock:^(NSError *error) {
@@ -67,18 +77,35 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    [button setTitle:@"Pick Video" forState:UIControlStateNormal];
-    [button sizeToFit];
+    UIButton *pickVidButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [pickVidButton setTitle:@"Pick Video" forState:UIControlStateNormal];
+    [pickVidButton sizeToFit];
     
     // Set a new (x,y) point for the button's center
-    button.center = CGPointMake(320/2, 60);
+    pickVidButton.center = CGPointMake(320/2, 100);
     
-    [button addTarget:self
-               action:@selector(video)
+    [pickVidButton addTarget:self
+               action:@selector(pickVideo)
      forControlEvents:UIControlEventTouchUpInside];
      
-    [self.view addSubview:button];
+    [self.view addSubview:pickVidButton];
+    
+    
+    UIButton *loadVidButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [loadVidButton setTitle:@"Send Video" forState:UIControlStateNormal];
+    [loadVidButton sizeToFit];
+    
+    // Set a new (x,y) point for the button's center
+    loadVidButton.center = CGPointMake(320/2, 400);
+    
+    [loadVidButton addTarget:self
+                      action:@selector(sendVideo)
+            forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:loadVidButton];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,7 +122,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 
 
 @end
