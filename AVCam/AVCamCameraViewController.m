@@ -431,7 +431,7 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 				[self.session beginConfiguration];
 				[self.session addOutput:movieFileOutput];
                 //auro changes capture to low profile
-				self.session.sessionPreset = AVCaptureSessionPresetLow;
+				self.session.sessionPreset = AVCaptureSessionPresetMedium;
 				AVCaptureConnection *connection = [movieFileOutput connectionWithMediaType:AVMediaTypeVideo];
 				if ( connection.isVideoStabilizationSupported ) {
 					connection.preferredVideoStabilizationMode = AVCaptureVideoStabilizationModeAuto;
