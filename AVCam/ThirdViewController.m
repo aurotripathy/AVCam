@@ -31,7 +31,7 @@ NSData *videoData;
     if(videoData != nil) {
         vidRequest = [NSMutableURLRequest new];
         vidRequest.timeoutInterval = 20.0;
-        [vidRequest setURL:[NSURL URLWithString:UPLOAD_URL]];
+        [vidRequest setURL:[NSURL URLWithString:VIDEO_UPLOAD_URL]];
         [vidRequest setHTTPMethod:@"POST"];
         
         NSString *boundary = @"---------------------------14737809831466499882746641449";

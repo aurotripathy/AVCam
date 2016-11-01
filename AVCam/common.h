@@ -12,6 +12,7 @@
 #define URL                   @"https://45fac5c7.ngrok.io/"
 #define UPLOAD_URL            (URL @"curl/")
 #define RECEIVER_PHONE_URL     (URL @"phone/")
+#define VIDEO_UPLOAD_URL     (URL @"vidcurl/")
 
 
 #endif /* common_h */
