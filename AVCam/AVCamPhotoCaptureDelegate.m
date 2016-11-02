@@ -188,6 +188,9 @@ NSMutableURLRequest *request;
     NSData *scaled_imagedata = UIImageJPEGRepresentation(image, 90);
     [self setPostParams:scaled_imagedata];
     
+    GlobalVars *globals = [GlobalVars sharedInstance];
+    NSLog(@"***Server name is %@", globals.serverName);
+    
     NSError *http_error = nil;
     NSURLResponse *responseStr = nil;
     NSData *syncResData;

@@ -170,8 +170,8 @@ NSData *videoData;
     
     [self.view addSubview:loadVidButton];
     
-    
-    
+    GlobalVars *globals = [GlobalVars sharedInstance];
+    NSLog(@"***Server name is %@", globals.serverName);
 }
 
 - (void)didReceiveMemoryWarning {

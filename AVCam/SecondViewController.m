@@ -23,6 +23,12 @@ NSString *recipientPhoneNumber;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UILabel *phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 60, 300, 30)];
+    [self.view addSubview:phoneLabel];
+    phoneLabel.textColor = [UIColor yellowColor];
+    phoneLabel.text = @"Recipeint Phone";
+    
     CGRect phoneTextFieldFrame = CGRectMake(60.0f, 100.0f, 205.0f, 31.0f);
     UITextField *phoneTextField = [[UITextField alloc] initWithFrame:phoneTextFieldFrame];
     phoneTextField.placeholder = @"14088025434";
@@ -38,6 +44,28 @@ NSString *recipientPhoneNumber;
     phoneTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     phoneTextField.delegate = self;
     [self.view addSubview:phoneTextField];
+    
+    // Do any additional setup after loading the view.
+    CGRect serverTextFieldFrame = CGRectMake(60.0f, 200.0f, 205.0f, 31.0f);
+    UITextField *serverTextField = [[UITextField alloc] initWithFrame:serverTextFieldFrame];
+    serverTextField.placeholder = @"14088025434";
+    serverTextField.keyboardType = UIKeyboardTypeDefault;
+    serverTextField.backgroundColor = [UIColor whiteColor];
+    serverTextField.textColor = [UIColor blackColor];
+    serverTextField.font = [UIFont systemFontOfSize:25.0f];
+    serverTextField.borderStyle = UITextBorderStyleRoundedRect;
+    serverTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    serverTextField.returnKeyType = UIReturnKeyDone;
+    serverTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    serverTextField.tag = 2;
+    serverTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    serverTextField.delegate = self;
+    [self.view addSubview:serverTextField];
+    
+    GlobalVars *globals = [GlobalVars sharedInstance];
+    globals.serverName = @"HelloWorld.txt";
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
